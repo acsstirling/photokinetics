@@ -2,7 +2,7 @@
 echo "time	EP0	EQ	EP*	[PC]	[PC+]	[Q]	[Q-]	[PC*]	EQh	lambda	Ilamp	Abscoef	k2	Gdiff" > results.txt
 
 # Define the filename to be used in the simulation
-fname="FOTO_MODELL_2022.cps"
+fname="FOTO_MODELL.cps"
 
 # reading the parameters we might want to change
 declare -A input_names_values
@@ -30,7 +30,7 @@ tail -n +1 data.txt | while read line; do
     sed -i "s/$1/$2/g" "$fname"
     sed -i "s/$3/$4/g" "$fname"
 
-    # now we use the associative array created; only those parameters are replaced which
+    # now we use the associative array created previously; only those parameters are replaced which
     # have not yet been replaced by using cat_data.txt above 
     for name in "${!input_names_values[@]}"; do
         sed -i "s/$name/${input_names_values[$name]}/g" "$fname"
