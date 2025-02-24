@@ -1,10 +1,10 @@
-# Create (or overwrite) the results.txt file with a header
+# Create  the results.txt file with the proper header
 echo "time	EP0	EQ	EP*	[PC]	[PC+]	[Q]	[Q-]	[PC*]	EQh	lambda	Ilamp	Abscoef	k2	Gdiff" > results.txt
 
 # Define the filename to be used in the simulation
 fname="FOTO_MODELL.cps"
 
-# reading the parameters we might want to change
+# reading the parameters we might want to change, but not this time!
 declare -A input_names_values
 while IFS=' ' read -r name value; do
     input_names_values["$name"]="$value"
