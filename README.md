@@ -19,7 +19,7 @@ actual values
 the temporary COPASI file
 * then the remaining parameters are substituted with their values
 * then for this new proper input file the COPASI run is carried out
-* then from the result file (time_course_results.txt) the last line is copied to the output file.
+* then from the COPASI output file (time_course_results.txt) the last line is copied to our results file.
 
 results.txt:
 * this file is created by the running_simulations.sh and it contains the steady-state values of the selected properties for
