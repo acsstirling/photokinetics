@@ -20,6 +20,13 @@ the temporary COPASI file
 * then the remaining parameters are substituted with their values
 * then for this new proper input file the COPASI run is carried out
 * then from the result file the last line is copied to the output file.
+
+results.txt:
+* this file is created by the running_simulations.sh and it contains the steady-state values of the selected properties for
+each combination of the standard ground-state and excited-state reduction potentials of PC.
+* note that during the run, a temporary file is created and rewritten (time_course_results.txt) which contains the time evolution of the
+selected properties (concentrations, potentials, etc.). In fact the last line of this file is concatenated to "results.txt" after
+each time-course simulations.
  
 results_analysis.ipynb:
 * this is a jupyter-notebook file which reads the output file created by running_simulations.sh; cleans the data and visualizes the
