@@ -7,6 +7,9 @@
 init.cps: 
 * initial COPASI file, where selected initial simulation values are replaced by strings; these strings
 will be substituted with the values set in data.txt and in running_simulations.sh.
+* the COPASI file can be run by the COPASI reaction kinetics simlation software which is freely available
+under the Artistic License 2.0 (https://copasi.org/Download/License/) and can be downloaded from:
+https://copasi.org/Download/
 
 running_simulations.sh: 
 * this script first creates the output file (results.txt) which will contain the final, steady-state values of
