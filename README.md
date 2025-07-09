@@ -1,5 +1,5 @@
 #### This project features the following files to easily reproduce the data in the article.
- data.txt:\
+ data.txt:
 * a simple text file featuring four columns, where the first and third columns are names,
  and the second and fourth columns are their respective values.
  * This file is read by the running_simulations.sh script line by line
