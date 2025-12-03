@@ -1,1 +1,7 @@
- 
+In this library the files necessary to reproduce the fitting in the manuscript are provided.
+
+FOTO_MODEL_bimolecular-CE-reduced.cps: COPASI file used for fitting
+
+DAbs1.txt, DAbs2.txt, DAbs3.txt, DAbs4.txt: experimental curve obtained from https://doi.org/10.1016/j.xpro.2023.102312 by WebPlotDigitizer ((https://automeris.io).
+
+QDabs1.txt, QDabs1.txt, QDabs1.txt, QDabs1.txt, QDabs1.txt,
