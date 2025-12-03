@@ -33,3 +33,5 @@ selected properties (concentrations, potentials, etc.). At the end of a time-cou
 results_analysis.ipynb:
 * this is a jupyter-notebook file which reads the output file created by running_simulations.sh; cleans the data and visualizes the
   actual quencher redox potential as a function of the standard ground and excited state reduction potentials of the photocatalyst.
+
+fitting_to_exp: library containing the files used for the kinetic modelling where some of the parameters were fitted to the experimental data.
