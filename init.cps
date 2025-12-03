@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- generated with COPASI 4.44 (Build 295) (http://www.copasi.org) at 2025-02-13T11:14:57Z -->
+<!-- generated with COPASI 4.44 (Build 295) (http://www.copasi.org) at 2025-10-21T12:00:46Z -->
 <?oxygen RNGSchema="http://www.copasi.org/static/schema/CopasiML.rng" type="xml"?>
 <COPASI xmlns="http://www.copasi.org/static/schema" versionMajor="4" versionMinor="44" versionDevel="295" copasiSourcesModified="0">
   <ListOfFunctions>
@@ -257,7 +257,9 @@ Reaction scheme where the products are created from the reactants and the change
       </ModelValue>
       <ModelValue key="ModelValue_11" name="lambda" simulationType="fixed" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF
+xmlns:dcterms="http://purl.org/dc/terms/"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 <rdf:Description rdf:about="#ModelValue_11">
 </rdf:Description>
 </rdf:RDF>
@@ -412,12 +414,6 @@ Reaction scheme where the products are created from the reactants and the change
         </Unit>
       </ModelValue>
       <ModelValue key="ModelValue_23" name="Gdf5" simulationType="assignment" addNoise="false">
-        <MiriamAnnotation>
-<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-<rdf:Description rdf:about="#ModelValue_23">
-</rdf:Description>
-</rdf:RDF>
-        </MiriamAnnotation>
         <Expression>
           max(min(&lt;CN=Root,Model=New Model,Vector=Values[Gact5],Reference=InitialValue>,&lt;CN=Root,Model=New Model,Vector=Values[Gact6],Reference=InitialValue>),&lt;CN=Root,Model=New Model,Vector=Values[Gdiff],Reference=InitialValue>)-min(&lt;CN=Root,Model=New Model,Vector=Values[Gact5],Reference=InitialValue>,&lt;CN=Root,Model=New Model,Vector=Values[Gact6],Reference=InitialValue>)+&lt;CN=Root,Model=New Model,Vector=Values[Gact5],Reference=InitialValue>
         </Expression>
@@ -455,7 +451,9 @@ Reaction scheme where the products are created from the reactants and the change
       </ModelValue>
       <ModelValue key="ModelValue_26" name="k3" simulationType="fixed" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF
+xmlns:dcterms="http://purl.org/dc/terms/"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 <rdf:Description rdf:about="#ModelValue_26">
 </rdf:Description>
 </rdf:RDF>
@@ -469,7 +467,9 @@ Reaction scheme where the products are created from the reactants and the change
       </ModelValue>
       <ModelValue key="ModelValue_27" name="k4" simulationType="fixed" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF
+xmlns:dcterms="http://purl.org/dc/terms/"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 <rdf:Description rdf:about="#ModelValue_27">
 </rdf:Description>
 </rdf:RDF>
@@ -523,15 +523,34 @@ Reaction scheme where the products are created from the reactants and the change
           V
         </Unit>
       </ModelValue>
-    </ListOfModelValues>
-    <ListOfReactions>
-      <Reaction key="Reaction_0" name="photoexcitation" reversible="false" fast="false" addNoise="false">
+      <ModelValue key="ModelValue_31" name="alpha" simulationType="fixed" addNoise="false">
+      </ModelValue>
+      <ModelValue key="ModelValue_32" name="kcage" simulationType="assignment" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-<rdf:Description rdf:about="#Reaction_0">
+<rdf:RDF
+xmlns:dcterms="http://purl.org/dc/terms/"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:Description rdf:about="#ModelValue_32">
 </rdf:Description>
 </rdf:RDF>
         </MiriamAnnotation>
+        <Expression>
+          &lt;CN=Root,Model=New Model,Vector=Values[alpha],Reference=InitialValue>*&lt;CN=Root,Model=New Model,Vector=Values[k5],Reference=InitialValue>
+        </Expression>
+      </ModelValue>
+      <ModelValue key="ModelValue_34" name="kcageback" simulationType="assignment" addNoise="false">
+        <Expression>
+          &lt;CN=Root,Model=New Model,Vector=Values[alpha],Reference=InitialValue>*&lt;CN=Root,Model=New Model,Vector=Values[k6],Reference=InitialValue>
+        </Expression>
+      </ModelValue>
+      <ModelValue key="ModelValue_33" name="kquench" simulationType="assignment" addNoise="false">
+        <Expression>
+          (1-&lt;CN=Root,Model=New Model,Vector=Values[alpha],Reference=InitialValue>)*&lt;CN=Root,Model=New Model,Vector=Values[k5],Reference=InitialValue>
+        </Expression>
+      </ModelValue>
+    </ListOfModelValues>
+    <ListOfReactions>
+      <Reaction key="Reaction_0" name="photoexcitation" reversible="false" fast="false" addNoise="false">
         <ListOfSubstrates>
           <Substrate metabolite="Metabolite_0" stoichiometry="1"/>
         </ListOfSubstrates>
@@ -561,12 +580,6 @@ Reaction scheme where the products are created from the reactants and the change
         </KineticLaw>
       </Reaction>
       <Reaction key="Reaction_1" name="relaxation" reversible="false" fast="false" addNoise="false">
-        <MiriamAnnotation>
-<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-<rdf:Description rdf:about="#Reaction_1">
-</rdf:Description>
-</rdf:RDF>
-        </MiriamAnnotation>
         <ListOfSubstrates>
           <Substrate metabolite="Metabolite_4" stoichiometry="1"/>
         </ListOfSubstrates>
@@ -589,7 +602,9 @@ Reaction scheme where the products are created from the reactants and the change
       </Reaction>
       <Reaction key="Reaction_2" name="ground state electron transfer" reversible="true" fast="false" addNoise="false">
         <MiriamAnnotation>
-<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF
+xmlns:dcterms="http://purl.org/dc/terms/"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 <rdf:Description rdf:about="#Reaction_2">
 </rdf:Description>
 </rdf:RDF>
@@ -626,12 +641,6 @@ Reaction scheme where the products are created from the reactants and the change
         </KineticLaw>
       </Reaction>
       <Reaction key="Reaction_3" name="excited state electron transfer" reversible="true" fast="false" addNoise="false">
-        <MiriamAnnotation>
-<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-<rdf:Description rdf:about="#Reaction_3">
-</rdf:Description>
-</rdf:RDF>
-        </MiriamAnnotation>
         <ListOfSubstrates>
           <Substrate metabolite="Metabolite_4" stoichiometry="1"/>
           <Substrate metabolite="Metabolite_2" stoichiometry="1"/>
@@ -641,24 +650,48 @@ Reaction scheme where the products are created from the reactants and the change
           <Product metabolite="Metabolite_3" stoichiometry="1"/>
         </ListOfProducts>
         <ListOfConstants>
-          <Constant key="Parameter_4700" name="k1" value="5.36593e+08"/>
-          <Constant key="Parameter_8509" name="k2" value="5.6898e-14"/>
+          <Constant key="Parameter_4700" name="k1" value="4.01961"/>
+          <Constant key="Parameter_8509" name="k2" value="2.48394e-18"/>
         </ListOfConstants>
         <KineticLaw function="Function_14" unitType="Default" scalingCompartment="CN=Root,Model=New Model,Vector=Compartments[compartment]">
           <ListOfCallParameters>
             <CallParameter functionParameter="FunctionParameter_69">
-              <SourceParameter reference="ModelValue_28"/>
+              <SourceParameter reference="ModelValue_32"/>
             </CallParameter>
             <CallParameter functionParameter="FunctionParameter_68">
               <SourceParameter reference="Metabolite_4"/>
               <SourceParameter reference="Metabolite_2"/>
             </CallParameter>
             <CallParameter functionParameter="FunctionParameter_78">
-              <SourceParameter reference="ModelValue_29"/>
+              <SourceParameter reference="ModelValue_34"/>
             </CallParameter>
             <CallParameter functionParameter="FunctionParameter_79">
               <SourceParameter reference="Metabolite_1"/>
               <SourceParameter reference="Metabolite_3"/>
+            </CallParameter>
+          </ListOfCallParameters>
+        </KineticLaw>
+      </Reaction>
+      <Reaction key="Reaction_4" name="quenching" reversible="false" fast="false" addNoise="false">
+        <ListOfSubstrates>
+          <Substrate metabolite="Metabolite_4" stoichiometry="1"/>
+          <Substrate metabolite="Metabolite_2" stoichiometry="1"/>
+        </ListOfSubstrates>
+        <ListOfProducts>
+          <Product metabolite="Metabolite_0" stoichiometry="1"/>
+          <Product metabolite="Metabolite_2" stoichiometry="1"/>
+        </ListOfProducts>
+        <ListOfConstants>
+          <Constant key="Parameter_6954" name="k1" value="0.1"/>
+        </ListOfConstants>
+        <KineticLaw function="Function_13" unitType="Default" scalingCompartment="CN=Root,Model=New Model,Vector=Compartments[compartment]">
+          <ListOfCallParameters>
+            <CallParameter functionParameter="FunctionParameter_80">
+              <SourceParameter reference="ModelValue_33"/>
+            </CallParameter>
+            <CallParameter functionParameter="FunctionParameter_81">
+              <SourceParameter reference="Metabolite_4"/>
+              <SourceParameter reference="Metabolite_2"/>
             </CallParameter>
           </ListOfCallParameters>
         </KineticLaw>
@@ -681,9 +714,9 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
           <ModelParameter cn="CN=Root,Model=New Model,Vector=Compartments[compartment]" value="1" type="Compartment" simulationType="fixed"/>
         </ModelParameterGroup>
         <ModelParameterGroup cn="String=Initial Species Values" type="Group">
-          <ModelParameter cn="CN=Root,Model=New Model,Vector=Compartments[compartment],Vector=Metabolites[PC]" value="6.0221407599999281e+23" type="Species" simulationType="reactions"/>
+          <ModelParameter cn="CN=Root,Model=New Model,Vector=Compartments[compartment],Vector=Metabolites[PC]" value="6.0221408569999995e+23" type="Species" simulationType="reactions"/>
           <ModelParameter cn="CN=Root,Model=New Model,Vector=Compartments[compartment],Vector=Metabolites[PCpos]" value="0" type="Species" simulationType="reactions"/>
-          <ModelParameter cn="CN=Root,Model=New Model,Vector=Compartments[compartment],Vector=Metabolites[Q]" value="6.0221407599999294e+23" type="Species" simulationType="reactions"/>
+          <ModelParameter cn="CN=Root,Model=New Model,Vector=Compartments[compartment],Vector=Metabolites[Q]" value="6.0221407599999999e+23" type="Species" simulationType="reactions"/>
           <ModelParameter cn="CN=Root,Model=New Model,Vector=Compartments[compartment],Vector=Metabolites[Qneg]" value="0" type="Species" simulationType="reactions"/>
           <ModelParameter cn="CN=Root,Model=New Model,Vector=Compartments[compartment],Vector=Metabolites[PCstar]" value="0" type="Species" simulationType="reactions"/>
         </ModelParameterGroup>
@@ -701,14 +734,14 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
           <ModelParameter cn="CN=Root,Model=New Model,Vector=Values[Gdiff]" value="16000" type="ModelValue" simulationType="fixed"/>
           <ModelParameter cn="CN=Root,Model=New Model,Vector=Values[lambda]" value="54392" type="ModelValue" simulationType="fixed"/>
           <ModelParameter cn="CN=Root,Model=New Model,Vector=Values[EpotPC]" value="2.1000000000000001" type="ModelValue" simulationType="fixed"/>
-          <ModelParameter cn="CN=Root,Model=New Model,Vector=Values[Epotstar]" value="-1.75" type="ModelValue" simulationType="fixed"/>
+          <ModelParameter cn="CN=Root,Model=New Model,Vector=Values[Epotstar]" value="-1.8999999999999999" type="ModelValue" simulationType="fixed"/>
           <ModelParameter cn="CN=Root,Model=New Model,Vector=Values[EpotQ]" value="-0.45000000000000001" type="ModelValue" simulationType="fixed"/>
           <ModelParameter cn="CN=Root,Model=New Model,Vector=Values[deltaG]" value="246037.51500000004" type="ModelValue" simulationType="fixed">
             <InitialExpression>
               &lt;CN=Root,Model=New Model,Vector=Values[z],Reference=InitialValue>*&lt;CN=Root,Model=New Model,Vector=Values[F],Reference=InitialValue>*(&lt;CN=Root,Model=New Model,Vector=Values[EpotPC],Reference=InitialValue>-&lt;CN=Root,Model=New Model,Vector=Values[EpotQ],Reference=InitialValue>)
             </InitialExpression>
           </ModelParameter>
-          <ModelParameter cn="CN=Root,Model=New Model,Vector=Values[deltaGstar]" value="-125430.89000000001" type="ModelValue" simulationType="fixed">
+          <ModelParameter cn="CN=Root,Model=New Model,Vector=Values[deltaGstar]" value="-139903.685" type="ModelValue" simulationType="fixed">
             <InitialExpression>
               &lt;CN=Root,Model=New Model,Vector=Values[z],Reference=InitialValue>*&lt;CN=Root,Model=New Model,Vector=Values[F],Reference=InitialValue>*(&lt;CN=Root,Model=New Model,Vector=Values[Epotstar],Reference=InitialValue>-&lt;CN=Root,Model=New Model,Vector=Values[EpotQ],Reference=InitialValue>)
             </InitialExpression>
@@ -723,20 +756,20 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
               (&lt;CN=Root,Model=New Model,Vector=Values[lambda],Reference=InitialValue>-&lt;CN=Root,Model=New Model,Vector=Values[deltaG],Reference=InitialValue>)^2/(4*&lt;CN=Root,Model=New Model,Vector=Values[lambda],Reference=InitialValue>)
             </InitialExpression>
           </ModelParameter>
-          <ModelParameter cn="CN=Root,Model=New Model,Vector=Values[Gact5]" value="23195.156881674244" type="ModelValue" simulationType="fixed">
+          <ModelParameter cn="CN=Root,Model=New Model,Vector=Values[Gact5]" value="33609.024633858033" type="ModelValue" simulationType="fixed">
             <InitialExpression>
               (&lt;CN=Root,Model=New Model,Vector=Values[lambda],Reference=InitialValue>+&lt;CN=Root,Model=New Model,Vector=Values[deltaGstar],Reference=InitialValue>)^2/(4*&lt;CN=Root,Model=New Model,Vector=Values[lambda],Reference=InitialValue>)
             </InitialExpression>
           </ModelParameter>
-          <ModelParameter cn="CN=Root,Model=New Model,Vector=Values[Gact6]" value="148626.04688167427" type="ModelValue" simulationType="fixed">
+          <ModelParameter cn="CN=Root,Model=New Model,Vector=Values[Gact6]" value="173512.70963385803" type="ModelValue" simulationType="fixed">
             <InitialExpression>
               (&lt;CN=Root,Model=New Model,Vector=Values[lambda],Reference=InitialValue>-&lt;CN=Root,Model=New Model,Vector=Values[deltaGstar],Reference=InitialValue>)^2/(4*&lt;CN=Root,Model=New Model,Vector=Values[lambda],Reference=InitialValue>)
             </InitialExpression>
           </ModelParameter>
           <ModelParameter cn="CN=Root,Model=New Model,Vector=Values[Gdf3]" value="414849.12065715197" type="ModelValue" simulationType="assignment"/>
           <ModelParameter cn="CN=Root,Model=New Model,Vector=Values[Gdf4]" value="168811.60565715199" type="ModelValue" simulationType="assignment"/>
-          <ModelParameter cn="CN=Root,Model=New Model,Vector=Values[Gdf5]" value="23195.156881674244" type="ModelValue" simulationType="assignment"/>
-          <ModelParameter cn="CN=Root,Model=New Model,Vector=Values[Gdf6]" value="148626.04688167427" type="ModelValue" simulationType="assignment"/>
+          <ModelParameter cn="CN=Root,Model=New Model,Vector=Values[Gdf5]" value="33609.024633858033" type="ModelValue" simulationType="assignment"/>
+          <ModelParameter cn="CN=Root,Model=New Model,Vector=Values[Gdf6]" value="173512.70963385803" type="ModelValue" simulationType="assignment"/>
           <ModelParameter cn="CN=Root,Model=New Model,Vector=Values[k2]" value="100000000" type="ModelValue" simulationType="fixed">
             <InitialExpression>
               1/&lt;CN=Root,Model=New Model,Vector=Values[tau],Reference=InitialValue>
@@ -752,17 +785,21 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
               &lt;CN=Root,Model=New Model,Vector=Values[R],Reference=InitialValue>*&lt;CN=Root,Model=New Model,Vector=Values[T],Reference=InitialValue>/&lt;CN=Root,Model=New Model,Vector=Values[h],Reference=InitialValue>/&lt;CN=Root,Model=New Model,Vector=Values[Nav],Reference=InitialValue>*exp(-&lt;CN=Root,Model=New Model,Vector=Values[Gdf4],Reference=InitialValue>/&lt;CN=Root,Model=New Model,Vector=Values[R],Reference=InitialValue>/&lt;CN=Root,Model=New Model,Vector=Values[T],Reference=InitialValue>)
             </InitialExpression>
           </ModelParameter>
-          <ModelParameter cn="CN=Root,Model=New Model,Vector=Values[k5]" value="536593047.39385623" type="ModelValue" simulationType="fixed">
+          <ModelParameter cn="CN=Root,Model=New Model,Vector=Values[k5]" value="8039217.3457951099" type="ModelValue" simulationType="fixed">
             <InitialExpression>
               &lt;CN=Root,Model=New Model,Vector=Values[R],Reference=InitialValue>*&lt;CN=Root,Model=New Model,Vector=Values[T],Reference=InitialValue>/&lt;CN=Root,Model=New Model,Vector=Values[h],Reference=InitialValue>/&lt;CN=Root,Model=New Model,Vector=Values[Nav],Reference=InitialValue>*exp(-&lt;CN=Root,Model=New Model,Vector=Values[Gdf5],Reference=InitialValue>/&lt;CN=Root,Model=New Model,Vector=Values[R],Reference=InitialValue>/&lt;CN=Root,Model=New Model,Vector=Values[T],Reference=InitialValue>)
             </InitialExpression>
           </ModelParameter>
-          <ModelParameter cn="CN=Root,Model=New Model,Vector=Values[k6]" value="5.6897989231258719e-14" type="ModelValue" simulationType="fixed">
+          <ModelParameter cn="CN=Root,Model=New Model,Vector=Values[k6]" value="2.4839386458442213e-18" type="ModelValue" simulationType="fixed">
             <InitialExpression>
               &lt;CN=Root,Model=New Model,Vector=Values[R],Reference=InitialValue>*&lt;CN=Root,Model=New Model,Vector=Values[T],Reference=InitialValue>/&lt;CN=Root,Model=New Model,Vector=Values[h],Reference=InitialValue>/&lt;CN=Root,Model=New Model,Vector=Values[Nav],Reference=InitialValue>*exp(-&lt;CN=Root,Model=New Model,Vector=Values[Gdf6],Reference=InitialValue>/&lt;CN=Root,Model=New Model,Vector=Values[R],Reference=InitialValue>/&lt;CN=Root,Model=New Model,Vector=Values[T],Reference=InitialValue>)
             </InitialExpression>
           </ModelParameter>
           <ModelParameter cn="CN=Root,Model=New Model,Vector=Values[EQh]" value="INF" type="ModelValue" simulationType="assignment"/>
+          <ModelParameter cn="CN=Root,Model=New Model,Vector=Values[alpha]" value="1" type="ModelValue" simulationType="fixed"/>
+          <ModelParameter cn="CN=Root,Model=New Model,Vector=Values[kcage]" value="8039217.3457951099" type="ModelValue" simulationType="assignment"/>
+          <ModelParameter cn="CN=Root,Model=New Model,Vector=Values[kcageback]" value="2.4839386458442213e-18" type="ModelValue" simulationType="assignment"/>
+          <ModelParameter cn="CN=Root,Model=New Model,Vector=Values[kquench]" value="0" type="ModelValue" simulationType="assignment"/>
         </ModelParameterGroup>
         <ModelParameterGroup cn="String=Kinetic Parameters" type="Group">
           <ModelParameterGroup cn="CN=Root,Model=New Model,Vector=Reactions[photoexcitation]" type="Reaction">
@@ -802,14 +839,21 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
             </ModelParameter>
           </ModelParameterGroup>
           <ModelParameterGroup cn="CN=Root,Model=New Model,Vector=Reactions[excited state electron transfer]" type="Reaction">
-            <ModelParameter cn="CN=Root,Model=New Model,Vector=Reactions[excited state electron transfer],ParameterGroup=Parameters,Parameter=k1" value="536593047.39385623" type="ReactionParameter" simulationType="assignment">
+            <ModelParameter cn="CN=Root,Model=New Model,Vector=Reactions[excited state electron transfer],ParameterGroup=Parameters,Parameter=k1" value="8039217.3457951099" type="ReactionParameter" simulationType="assignment">
               <InitialExpression>
-                &lt;CN=Root,Model=New Model,Vector=Values[k5],Reference=InitialValue>
+                &lt;CN=Root,Model=New Model,Vector=Values[kcage],Reference=InitialValue>
               </InitialExpression>
             </ModelParameter>
-            <ModelParameter cn="CN=Root,Model=New Model,Vector=Reactions[excited state electron transfer],ParameterGroup=Parameters,Parameter=k2" value="5.6897989231258719e-14" type="ReactionParameter" simulationType="assignment">
+            <ModelParameter cn="CN=Root,Model=New Model,Vector=Reactions[excited state electron transfer],ParameterGroup=Parameters,Parameter=k2" value="2.4839386458442213e-18" type="ReactionParameter" simulationType="assignment">
               <InitialExpression>
-                &lt;CN=Root,Model=New Model,Vector=Values[k6],Reference=InitialValue>
+                &lt;CN=Root,Model=New Model,Vector=Values[kcageback],Reference=InitialValue>
+              </InitialExpression>
+            </ModelParameter>
+          </ModelParameterGroup>
+          <ModelParameterGroup cn="CN=Root,Model=New Model,Vector=Reactions[quenching]" type="Reaction">
+            <ModelParameter cn="CN=Root,Model=New Model,Vector=Reactions[quenching],ParameterGroup=Parameters,Parameter=k1" value="0" type="ReactionParameter" simulationType="assignment">
+              <InitialExpression>
+                &lt;CN=Root,Model=New Model,Vector=Values[kquench],Reference=InitialValue>
               </InitialExpression>
             </ModelParameter>
           </ModelParameterGroup>
@@ -820,14 +864,17 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <StateTemplateVariable objectReference="Model_0"/>
       <StateTemplateVariable objectReference="Metabolite_0"/>
       <StateTemplateVariable objectReference="Metabolite_1"/>
-      <StateTemplateVariable objectReference="Metabolite_2"/>
-      <StateTemplateVariable objectReference="Metabolite_3"/>
       <StateTemplateVariable objectReference="Metabolite_4"/>
+      <StateTemplateVariable objectReference="Metabolite_3"/>
+      <StateTemplateVariable objectReference="Metabolite_2"/>
       <StateTemplateVariable objectReference="ModelValue_21"/>
       <StateTemplateVariable objectReference="ModelValue_22"/>
       <StateTemplateVariable objectReference="ModelValue_23"/>
       <StateTemplateVariable objectReference="ModelValue_24"/>
       <StateTemplateVariable objectReference="ModelValue_30"/>
+      <StateTemplateVariable objectReference="ModelValue_32"/>
+      <StateTemplateVariable objectReference="ModelValue_34"/>
+      <StateTemplateVariable objectReference="ModelValue_33"/>
       <StateTemplateVariable objectReference="Compartment_0"/>
       <StateTemplateVariable objectReference="ModelValue_0"/>
       <StateTemplateVariable objectReference="ModelValue_1"/>
@@ -855,9 +902,10 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <StateTemplateVariable objectReference="ModelValue_27"/>
       <StateTemplateVariable objectReference="ModelValue_28"/>
       <StateTemplateVariable objectReference="ModelValue_29"/>
+      <StateTemplateVariable objectReference="ModelValue_31"/>
     </StateTemplate>
     <InitialState type="initialState">
-      0 tbdcPC 0 tbdcQ 0 0 414849.12065715197 168811.60565715199 23195.156881674244 148626.04688167427 INF 1 6.0221399999999997e+23 1 96485.300000000003 8.3144600000000004 298.14999999999998 6.6260700000000002e-34 tbdABS tbdIlamp 1e-08 1 16000 tbdGrelax tbdEPgr tbdEPstar tbdEQ 246037.51500000004 -125430.89000000001 414849.12065715197 168811.60565715199 23195.156881674244 148626.04688167427 100000000 1.3026195456979608e-60 1.6547748346448701e-17 536593047.39385623 5.6897989231258719e-14 
+      0 tbdcPC 0 0 0 tbdcQ 414849.12065715197 168811.60565715199 33609.024633858033 173512.70963385803 INF 8039217.3457951099 2.4839386458442213e-18 0 1 6.0221399999999997e+23 1 96485.300000000003 8.3144600000000004 298.14999999999998 6.6260700000000002e-34 tbdABS tbdIlamp 1e-08 1 16000 tbdGrelax tbdEPgr tbdEPstar tbdEQ 246037.51500000004 -139903.685 414849.12065715197 168811.60565715199 33609.024633858033 173512.70963385803 100000000 1.3026195456979608e-60 1.6547748346448701e-17 8039217.3457951099 2.4839386458442213e-18 tbdAlpha 
     </InitialState>
   </Model>
   <ListOfTasks>
