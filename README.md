@@ -17,7 +17,7 @@ the selected variables (concentrations, potentials), relevant constants (such as
 rate constant, solvent reorganization energy, etc); and set the column names; 
 * then defines a filename for the temporary COPASI input file, where all the initial parameters are substituted with their
 actual values
-* then a list of parameters and their values are set
+* then a list of parameters and their actualvalues are set
 * then the data.txt file is read line-by-line and for each line the actual parameter and value pairs are read and inserted into
 the temporary COPASI file
 * then the remaining parameters are substituted with their values
