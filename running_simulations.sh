@@ -15,12 +15,16 @@ tbdABS 1.00
 tbdcPC 6.022140857e23
 tbdcQ 6.022140857e23
 tbdEQ -0.45
-tbdIlamp 1.0000
+tbdIlamp 0.0564
 tbdGrelax 54392 
+tbdAlpha 0.5
 EOF
 
+# we need a new time_course_results.txt
+\rm time_course_results.txt
+touch time_course_results.txt 
 
-# Process each line of cat_data.txt, which contains the parameters we are studying:
+# Process each line of data.txt, which contains the parameters we are studying:
 tail -n +1 data.txt | while read line; do
     # Copy the template file
     cp init.cps "$fname"
@@ -31,7 +35,7 @@ tail -n +1 data.txt | while read line; do
     sed -i "s/$3/$4/g" "$fname"
 
     # now we use the associative array created previously; only those parameters are replaced which
-    # have not yet been replaced by using cat_data.txt above 
+    # have not yet been replaced by using data.txt above 
     for name in "${!input_names_values[@]}"; do
         sed -i "s/$name/${input_names_values[$name]}/g" "$fname"
     done
